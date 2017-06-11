@@ -1,0 +1,474 @@
+#==============================================================================
+# Cost
+#==============================================================================
+# Mineral cost for shield components
+# Attributes in this section are named using the following pattern
+# cost_<size>_<tier>_<type>
+@cost_LARGE_1_SHIELD = 20
+@cost_LARGE_2_SHIELD = 30
+@cost_LARGE_3_SHIELD = 40
+@cost_LARGE_4_SHIELD = 50
+@cost_LARGE_5_SHIELD = 60
+@cost_LARGE_6_ENIGMATIC = 60
+@cost_LARGE_6_PSI = 60
+@cost_MEDIUM_1_SHIELD = 10
+@cost_MEDIUM_2_SHIELD = 15
+@cost_MEDIUM_3_SHIELD = 20
+@cost_MEDIUM_4_SHIELD = 25
+@cost_MEDIUM_5_SHIELD = 30
+@cost_MEDIUM_6_ENIGMATIC = 30
+@cost_MEDIUM_6_PSI = 30
+@cost_SMALL_1_SHIELD = 5
+@cost_SMALL_2_SHIELD = 7.5
+@cost_SMALL_3_SHIELD = 10
+@cost_SMALL_4_SHIELD = 12.5
+@cost_SMALL_5_SHIELD = 15
+@cost_SMALL_6_ENIGMATIC = 15
+@cost_SMALL_6_PSI = 15
+
+
+#==============================================================================
+# Power
+#==============================================================================
+# Module power cost for shield components
+# Attributes in this section are named using the following pattern
+# power_<size>_<tier>_<type>
+@power_LARGE_1_SHIELD = -10
+@power_LARGE_2_SHIELD = -20
+@power_LARGE_3_SHIELD = -30
+@power_LARGE_4_SHIELD = -40
+@power_LARGE_5_SHIELD = -50
+@power_LARGE_6_ENIGMATIC = -60
+@power_LARGE_6_PSI = -60
+@power_MEDIUM_1_SHIELD = -5
+@power_MEDIUM_2_SHIELD = -10
+@power_MEDIUM_3_SHIELD = -15
+@power_MEDIUM_4_SHIELD = -20
+@power_MEDIUM_5_SHIELD = -25
+@power_MEDIUM_6_ENIGMATIC = -30
+@power_MEDIUM_6_PSI = -30
+@power_SMALL_1_SHIELD = -2.5
+@power_SMALL_2_SHIELD = -5
+@power_SMALL_3_SHIELD = -7.5
+@power_SMALL_4_SHIELD = -10
+@power_SMALL_5_SHIELD = -12.5
+@power_SMALL_6_ENIGMATIC = -15
+@power_SMALL_6_PSI = -15
+
+
+#==============================================================================
+# Shield Hit Points
+#==============================================================================
+# Shield hit points contributed by this module
+# Attributes in this section are named using the following pattern
+# shield_hp_<size>_<tier>_<type>
+@shield_hp_LARGE_1_SHIELD = 300
+@shield_hp_LARGE_2_SHIELD = 600
+@shield_hp_LARGE_3_SHIELD = 900
+@shield_hp_LARGE_4_SHIELD = 1200
+@shield_hp_LARGE_5_SHIELD = 1500
+@shield_hp_LARGE_6_ENIGMATIC = 2175
+@shield_hp_LARGE_6_PSI = 2175
+@shield_hp_MEDIUM_1_SHIELD = 150
+@shield_hp_MEDIUM_2_SHIELD = 300
+@shield_hp_MEDIUM_3_SHIELD = 450
+@shield_hp_MEDIUM_4_SHIELD = 600
+@shield_hp_MEDIUM_5_SHIELD = 750
+@shield_hp_MEDIUM_6_ENIGMATIC = 1088
+@shield_hp_MEDIUM_6_PSI = 1088
+@shield_hp_SMALL_1_SHIELD = 75
+@shield_hp_SMALL_2_SHIELD = 150
+@shield_hp_SMALL_3_SHIELD = 225
+@shield_hp_SMALL_4_SHIELD = 300
+@shield_hp_SMALL_5_SHIELD = 375
+@shield_hp_SMALL_6_ENIGMATIC = 544
+@shield_hp_SMALL_6_PSI = 544
+
+
+#==============================================================================
+# Shield HP Regeneration Per Day
+#==============================================================================
+# Shield hit points regenerated per day by this module
+# Attributes in this section are named using the following pattern
+# shield_regen_<size>_<tier>_<type>
+@shield_regen_LARGE_1_SHIELD = 4.8
+@shield_regen_LARGE_2_SHIELD = 9.6
+@shield_regen_LARGE_3_SHIELD = 14.4
+@shield_regen_LARGE_4_SHIELD = 19.2
+@shield_regen_LARGE_5_SHIELD = 24
+@shield_regen_LARGE_6_ENIGMATIC = 34.8
+@shield_regen_LARGE_6_PSI = 34.8
+@shield_regen_MEDIUM_1_SHIELD = 2.4
+@shield_regen_MEDIUM_2_SHIELD = 4.8
+@shield_regen_MEDIUM_3_SHIELD = 7.2
+@shield_regen_MEDIUM_4_SHIELD = 9.6
+@shield_regen_MEDIUM_5_SHIELD = 12
+@shield_regen_MEDIUM_6_ENIGMATIC = 17.4
+@shield_regen_MEDIUM_6_PSI = 17.4
+@shield_regen_SMALL_1_SHIELD = 1.2
+@shield_regen_SMALL_2_SHIELD = 2.4
+@shield_regen_SMALL_3_SHIELD = 3.6
+@shield_regen_SMALL_4_SHIELD = 4.8
+@shield_regen_SMALL_5_SHIELD = 6
+@shield_regen_SMALL_6_ENIGMATIC = 8.7
+@shield_regen_SMALL_6_PSI = 8.7
+
+
+#=============================
+# Tier 1 - Deflectors
+#=============================
+
+utility_component_template = {
+	key = "SMALL_SHIELD_1"
+	size = small
+	icon = "GFX_ship_part_shield_1"
+	icon_frame = 1
+	power = @power_SMALL_1_SHIELD
+	cost = @cost_SMALL_1_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_1_SHIELD
+		ship_shield_regen_add = @shield_regen_SMALL_1_SHIELD
+	}
+	prerequisites = { "tech_shields_1" }
+	component_set = "SHIELD_1"
+	upgrades_to = "SMALL_SHIELD_2"
+}
+
+utility_component_template = {
+	key = "MEDIUM_SHIELD_1"
+	size = medium
+	icon = "GFX_ship_part_shield_1"
+	icon_frame = 1
+	power = @power_MEDIUM_1_SHIELD
+	cost = @cost_MEDIUM_1_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_1_SHIELD
+		ship_shield_regen_add = @shield_regen_MEDIUM_1_SHIELD
+	}
+	prerequisites = { "tech_shields_1" }
+	component_set = "SHIELD_1"
+	upgrades_to = "MEDIUM_SHIELD_2"
+}
+
+utility_component_template = {
+	key = "LARGE_SHIELD_1"
+	size = large
+	icon = "GFX_ship_part_shield_1"
+	icon_frame = 1
+	power = @power_LARGE_1_SHIELD
+	cost = @cost_LARGE_1_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_1_SHIELD
+		ship_shield_regen_add = @shield_regen_LARGE_1_SHIELD
+	}
+	prerequisites = { "tech_shields_1" }
+	component_set = "SHIELD_1"
+	upgrades_to = "LARGE_SHIELD_2"
+}
+
+#=============================
+# Tier 2 - Advanced Deflectors
+#=============================
+
+utility_component_template = {
+	key = "SMALL_SHIELD_2"
+	size = small
+	icon = "GFX_ship_part_shield_2"
+	icon_frame = 1
+	power = @power_SMALL_2_SHIELD
+	cost = @cost_SMALL_2_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_2_SHIELD
+		ship_shield_regen_add = @shield_regen_SMALL_2_SHIELD
+	}
+	prerequisites = { "tech_shields_2" }
+	component_set = "SHIELD_2"
+	upgrades_to = "SMALL_SHIELD_3"
+}
+
+utility_component_template = {
+	key = "MEDIUM_SHIELD_2"
+	size = medium
+	icon = "GFX_ship_part_shield_2"
+	icon_frame = 1
+	power = @power_MEDIUM_2_SHIELD
+	cost = @cost_MEDIUM_2_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_2_SHIELD
+		ship_shield_regen_add = @shield_regen_MEDIUM_2_SHIELD
+	}
+	prerequisites = { "tech_shields_2" }
+	component_set = "SHIELD_2"
+	upgrades_to = "MEDIUM_SHIELD_3"
+}
+
+utility_component_template = {
+	key = "LARGE_SHIELD_2"
+	size = large
+	icon = "GFX_ship_part_shield_2"
+	icon_frame = 1
+	power = @power_LARGE_2_SHIELD
+	cost = @cost_LARGE_2_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_2_SHIELD
+		ship_shield_regen_add = @shield_regen_LARGE_2_SHIELD
+	}
+	prerequisites = { "tech_shields_2" }
+	component_set = "SHIELD_2"
+	upgrades_to = "LARGE_SHIELD_3"
+}
+
+#=============================
+# Tier 3 - Shields
+#=============================
+
+utility_component_template = {
+	key = "SMALL_SHIELD_3"
+	size = small
+	icon = "GFX_ship_part_shield_3"
+	icon_frame = 1
+	power = @power_SMALL_3_SHIELD
+	cost = @cost_SMALL_3_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_3_SHIELD
+		ship_shield_regen_add = @shield_regen_SMALL_3_SHIELD
+	}
+	prerequisites = { "tech_shields_3" }
+	component_set = "SHIELD_3"
+	upgrades_to = "SMALL_SHIELD_4"
+}
+
+utility_component_template = {
+	key = "MEDIUM_SHIELD_3"
+	size = medium
+	icon = "GFX_ship_part_shield_3"
+	icon_frame = 1
+	power = @power_MEDIUM_3_SHIELD
+	cost = @cost_MEDIUM_3_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_3_SHIELD
+		ship_shield_regen_add = @shield_regen_MEDIUM_3_SHIELD
+	}
+	prerequisites = { "tech_shields_3" }
+	component_set = "SHIELD_3"
+	upgrades_to = "MEDIUM_SHIELD_4"
+}
+
+utility_component_template = {
+	key = "LARGE_SHIELD_3"
+	size = large
+	icon = "GFX_ship_part_shield_3"
+	icon_frame = 1
+	power = @power_LARGE_3_SHIELD
+	cost = @cost_LARGE_3_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_3_SHIELD
+		ship_shield_regen_add = @shield_regen_LARGE_3_SHIELD
+	}
+	prerequisites = { "tech_shields_3" }
+	component_set = "SHIELD_3"
+	upgrades_to = "LARGE_SHIELD_4"
+}
+
+#=============================
+# Tier 4 - Advanced Shields
+#=============================
+
+utility_component_template = {
+	key = "SMALL_SHIELD_4"
+	size = small
+	icon = "GFX_ship_part_shield_4"
+	icon_frame = 1
+	power = @power_SMALL_4_SHIELD
+	cost = @cost_SMALL_4_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_4_SHIELD
+		ship_shield_regen_add = @shield_regen_SMALL_4_SHIELD
+	}
+	prerequisites = { "tech_shields_4" }
+	component_set = "SHIELD_4"
+	upgrades_to = "SMALL_SHIELD_5"
+}
+
+utility_component_template = {
+	key = "MEDIUM_SHIELD_4"
+	size = medium
+	icon = "GFX_ship_part_shield_4"
+	icon_frame = 1
+	power = @power_MEDIUM_4_SHIELD
+	cost = @cost_MEDIUM_4_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_4_SHIELD
+		ship_shield_regen_add = @shield_regen_MEDIUM_4_SHIELD
+	}
+	prerequisites = { "tech_shields_4" }
+	component_set = "SHIELD_4"
+	upgrades_to = "MEDIUM_SHIELD_5"
+}
+
+utility_component_template = {
+	key = "LARGE_SHIELD_4"
+	size = large
+	icon = "GFX_ship_part_shield_4"
+	icon_frame = 1
+	power = @power_LARGE_4_SHIELD
+	cost = @cost_LARGE_4_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_4_SHIELD
+		ship_shield_regen_add = @shield_regen_LARGE_4_SHIELD
+	}
+	prerequisites = { "tech_shields_4" }
+	component_set = "SHIELD_4"
+	upgrades_to = "LARGE_SHIELD_5"
+}
+
+#=============================
+# Tier 5 - Hyper Shields
+#=============================
+
+utility_component_template = {
+	key = "SMALL_SHIELD_5"
+	size = small
+	icon = "GFX_ship_part_shield_5"
+	icon_frame = 1
+	power = @power_SMALL_5_SHIELD
+	cost = @cost_SMALL_5_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_5_SHIELD
+		ship_shield_regen_add = @shield_regen_SMALL_5_SHIELD
+	}
+	prerequisites = { "tech_shields_5" }
+	upgrades_to = "SMALL_ENIGMATIC_SHIELD"
+	component_set = "SHIELD_5"
+}
+
+utility_component_template = {
+	key = "MEDIUM_SHIELD_5"
+	size = medium
+	icon = "GFX_ship_part_shield_5"
+	icon_frame = 1
+	power = @power_MEDIUM_5_SHIELD
+	cost = @cost_MEDIUM_5_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_5_SHIELD
+		ship_shield_regen_add = @shield_regen_MEDIUM_5_SHIELD
+	}
+	prerequisites = { "tech_shields_5" }
+	upgrades_to = "MEDIUM_ENIGMATIC_SHIELD"
+	component_set = "SHIELD_5"
+}
+
+utility_component_template = {
+	key = "LARGE_SHIELD_5"
+	size = large
+	icon = "GFX_ship_part_shield_5"
+	icon_frame = 1
+	power = @power_LARGE_5_SHIELD
+	cost = @cost_LARGE_5_SHIELD
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_5_SHIELD
+		ship_shield_regen_add = @shield_regen_LARGE_5_SHIELD
+	}
+	prerequisites = { "tech_shields_5" }
+	upgrades_to = "LARGE_ENIGMATIC_SHIELD"
+	component_set = "SHIELD_5"
+}
+
+
+#=============================
+# Tier 6 - Enigmatic Fortress
+#=============================
+
+# Enigmatic Deflectors
+utility_component_template = {
+	key = "SMALL_ENIGMATIC_SHIELD"
+	size = small
+	icon = "GFX_ship_part_enigmatic_shield"
+	icon_frame = 1
+	power = @power_SMALL_6_ENIGMATIC
+	cost = @cost_SMALL_6_ENIGMATIC
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_6_ENIGMATIC
+		ship_shield_regen_add = @shield_regen_SMALL_6_ENIGMATIC
+	}
+	prerequisites = { "tech_enigmatic_deflector" }
+	component_set = "ENIGMATIC_SHIELD"
+}
+
+utility_component_template = {
+	key = "MEDIUM_ENIGMATIC_SHIELD"
+	size = medium
+	icon = "GFX_ship_part_enigmatic_shield"
+	icon_frame = 1
+	power = @power_MEDIUM_6_ENIGMATIC
+	cost = @cost_MEDIUM_6_ENIGMATIC
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_6_ENIGMATIC
+		ship_shield_regen_add = @shield_regen_MEDIUM_6_ENIGMATIC
+	}
+	prerequisites = { "tech_enigmatic_deflector" }
+	component_set = "ENIGMATIC_SHIELD"
+}
+
+utility_component_template = {
+	key = "LARGE_ENIGMATIC_SHIELD"
+	size = large
+	icon = "GFX_ship_part_enigmatic_shield"
+	icon_frame = 1
+	power = @power_LARGE_6_ENIGMATIC
+	cost = @cost_LARGE_6_ENIGMATIC
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_6_ENIGMATIC
+		ship_shield_regen_add = @shield_regen_LARGE_6_ENIGMATIC
+	}
+	prerequisites = { "tech_enigmatic_deflector" }
+	component_set = "ENIGMATIC_SHIELD"
+}
+
+#=============================
+# Tier 6 - Psionic Shields
+#=============================
+utility_component_template = {
+	key = "SMALL_PSI_SHIELD"
+	size = small
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+	power = @power_SMALL_6_PSI
+	cost = @cost_SMALL_6_PSI
+	modifier = {
+		ship_shield_hp_add = @shield_hp_SMALL_6_PSI
+		ship_shield_regen_add = @shield_regen_SMALL_6_PSI
+	}
+	prerequisites = { "tech_psionic_shield" }
+	component_set = "PSI_SHIELD"
+}
+
+utility_component_template = {
+	key = "MEDIUM_PSI_SHIELD"
+	size = medium
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+	power = @power_MEDIUM_6_PSI
+	cost = @cost_MEDIUM_6_PSI
+	modifier = {
+		ship_shield_hp_add = @shield_hp_MEDIUM_6_PSI
+		ship_shield_regen_add = @shield_regen_MEDIUM_6_PSI
+	}
+	prerequisites = { "tech_psionic_shield" }
+	component_set = "PSI_SHIELD"
+}
+
+utility_component_template = {
+	key = "LARGE_PSI_SHIELD"
+	size = large
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+	power = @power_LARGE_6_PSI
+	cost = @cost_LARGE_6_PSI
+	modifier = {
+		ship_shield_hp_add = @shield_hp_LARGE_6_PSI
+		ship_shield_regen_add = @shield_regen_LARGE_6_PSI
+	}
+	prerequisites = { "tech_psionic_shield" }
+	component_set = "PSI_SHIELD"
+}
