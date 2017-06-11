@@ -1,4 +1,4 @@
-﻿name="Tech Balance"
+name="Tech Balance"
 path="mod/tech-balance"
 tags={
 	"Fixes"
